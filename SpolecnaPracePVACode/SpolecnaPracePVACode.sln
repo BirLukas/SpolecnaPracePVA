@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35919.96 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpolecnaPracePVACode", "SpolecnaPracePVACode.csproj", "{76BA3C0F-165E-4983-8125-7BF9E69CD51D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{76BA3C0F-165E-4983-8125-7BF9E69CD51D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76BA3C0F-165E-4983-8125-7BF9E69CD51D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76BA3C0F-165E-4983-8125-7BF9E69CD51D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76BA3C0F-165E-4983-8125-7BF9E69CD51D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BD9A9CAF-F80E-4125-A8A8-7F5D98618A39}
+	EndGlobalSection
+EndGlobal
