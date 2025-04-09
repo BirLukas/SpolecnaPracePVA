@@ -59,6 +59,7 @@
             NewCocktailBtn.TabIndex = 1;
             NewCocktailBtn.Text = "New random cocktail!";
             NewCocktailBtn.UseVisualStyleBackColor = false;
+            NewCocktailBtn.Click += NewCocktailBtn_Click;
             // 
             // Heading
             // 
