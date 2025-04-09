@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using RestSharp;
 
@@ -15,7 +16,13 @@ namespace SpolecnaPracePVACode
         public async Task<Cocktail> GetRandomCocktail()
         {
             RestResponse response = await _client.ExecuteAsync(_request);
-            var cocktailResponse = System.Text.Json.JsonSerializer.Deserialize<DrinkResponse>(response.Content);
+
+            var options = new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            }; 
+
+            var cocktailResponse = System.Text.Json.JsonSerializer.Deserialize<DrinkResponse>(response.Content, options);
             return cocktailResponse?.drinks?.FirstOrDefault(); // vrátí první koktejl z odpovědi
         }
     }
