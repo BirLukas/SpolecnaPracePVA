@@ -13,6 +13,7 @@ namespace SpolecnaPracePVACode
         public string strAlcoholic { get; set; }
         public string strCategory { get; set; }
         public string strInstructions { get; set; }
+        public string strDrinkThumb { get; set; }
 
         // Ingredience 1–15
         public string strIngredient1 { get; set; }
