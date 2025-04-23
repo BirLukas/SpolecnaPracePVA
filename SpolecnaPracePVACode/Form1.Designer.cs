@@ -147,6 +147,7 @@
             Controls.Add(CocktailImage);
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)CocktailImage).EndInit();
             ResumeLayout(false);
             PerformLayout();

@@ -8,6 +8,7 @@ namespace SpolecnaPracePVACode
 {
     internal class Cocktail
     {
+        public string idDrink { get; set; }
         public string strDrink { get; set; }
         public string strGlass { get; set; }
         public string strAlcoholic { get; set; }

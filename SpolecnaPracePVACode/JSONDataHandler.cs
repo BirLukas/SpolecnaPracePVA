@@ -19,7 +19,7 @@ namespace SpolecnaPracePVACode
             _filePath = Path.Combine(_dataPath, "cocktail.json"); // cesta k souboru
 
         } 
-        public void SaveToJson(Cocktail drink) // metoda pro uložení do JSON
+        public void SaveToJson(string idDrink)
         {
             if (!Directory.Exists(_dataPath)) // pokud neexistuje složka data, vytvoří ji
             {
@@ -29,11 +29,17 @@ namespace SpolecnaPracePVACode
             {
                 File.Delete(_filePath);
             }
+            string json = JsonConvert.SerializeObject(idDrink, Formatting.Indented); // serializace do JSON
+
+            using (StreamWriter writer = new StreamWriter(_filePath))
+            {
+                writer.Write(json); // zápis do souboru
+            }
         }
-        public Cocktail LoadFromJson(string filePath) // metoda pro načtení z JSON
+        public string LoadFromJson()
         {
-            string json = File.ReadAllText(filePath);
-            return JsonConvert.DeserializeObject<Cocktail>(json);
+            string json = File.ReadAllText(_filePath);
+            return json;
         }
     }
 }

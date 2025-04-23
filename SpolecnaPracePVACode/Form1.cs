@@ -12,18 +12,11 @@ namespace SpolecnaPracePVACode
             InitializeComponent();
         }
         private APIHandler _APIHandler = new APIHandler();
+        private JSONDataHandler _jsonhandler = new JSONDataHandler();
 
         // TODO: pøidat tøídu pro naèítání a ukládání z JSON souboru
         // Zalamování textu instrukcí
 
-        /*public class DrinkLoader
-        {
-            public static Drink LoadFromJson(string filePath)
-            {
-                string json = File.ReadAllText(filePath);
-                return JsonConvert.DeserializeObject<Drink>(json);
-            }
-        }*/
         private async void UpdateInfo() // naète náhodný koktejl a aktualizuje informace
         {
             Cocktail cocktail = await _APIHandler.GetRandomCocktail();
@@ -47,6 +40,7 @@ namespace SpolecnaPracePVACode
             InstructionsLabel.Text = instructions;
 
             LoadImageFromUrl(CocktailImage, imageUrl); // zmìnìní obrázku
+            _jsonhandler.SaveToJson(cocktail.idDrink);
         }
         private void LoadImageFromUrl(PictureBox pictureBox, string url) // metoda pro naètení obrázku z url
         {
@@ -67,12 +61,16 @@ namespace SpolecnaPracePVACode
         }
         private void NewCocktailBtn_Click(object sender, EventArgs e) // metoda na kliknutí na tlaèítko
         {
-            //var drink = DrinkLoader.LoadFromJson("sample_drink.json");
-
             UpdateInfo();
 
             //CocktailImage.ImageLocation = drink.ImageUrl;
 
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            
+            _jsonhandler.LoadFromJson();
         }
     }
 }
