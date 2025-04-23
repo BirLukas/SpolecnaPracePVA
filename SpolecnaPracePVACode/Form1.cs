@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using System.Net;
 using System.Windows.Forms;
 using Newtonsoft.Json;
@@ -10,12 +11,12 @@ namespace SpolecnaPracePVACode
         public Form1()
         {
             InitializeComponent();
+            OnLoad();
         }
         private APIHandler _APIHandler = new APIHandler();
         private JSONDataHandler _jsonhandler = new JSONDataHandler();
 
-        // TODO: pøidat tøídu pro naèítání a ukládání z JSON souboru
-        // Zalamování textu instrukcí
+        // TODO Zalamování textu instrukcí
 
         private void UpdateInfo(Cocktail cocktail) // naète náhodný koktejl a aktualizuje informace
         {
@@ -72,11 +73,14 @@ namespace SpolecnaPracePVACode
                 Invoke(new Action(() => UpdateInfo(cocktail)));
             });
         }
-
-
-        private void Form1_Load(object sender, EventArgs e)
+        private void OnLoad()
         {
-            _APIHandler.SearchCocktailByID(_jsonhandler.LoadFromJson());
+            Task.Run(async () =>
+            {
+                string cocktailId = _jsonhandler.LoadFromJson();
+                Cocktail cocktail = await _APIHandler.SearchCocktailByID(_jsonhandler.LoadFromJson());
+                Invoke(new Action(() => UpdateInfo(cocktail)));
+            });
         }
     }
 }

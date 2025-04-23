@@ -38,8 +38,14 @@ namespace SpolecnaPracePVACode
         }
         public string LoadFromJson()
         {
+            if (!File.Exists(_filePath))
+            {
+                return "11007";
+            }
+
             string json = File.ReadAllText(_filePath);
-            return json;
+            return JsonConvert.DeserializeObject<string>(json); // odstraní uvozovky
         }
+
     }
 }
