@@ -113,21 +113,21 @@
             // 
             // InstructionsLabel
             // 
-            InstructionsLabel.AutoSize = true;
             InstructionsLabel.Font = new Font("Segoe UI", 12F);
             InstructionsLabel.Location = new Point(297, 213);
+            InstructionsLabel.MaximumSize = new Size(369, 122);
             InstructionsLabel.Name = "InstructionsLabel";
-            InstructionsLabel.Size = new Size(122, 28);
+            InstructionsLabel.Size = new Size(369, 122);
             InstructionsLabel.TabIndex = 7;
             InstructionsLabel.Text = "Instructions: ";
             // 
             // IngredientsLabel
             // 
-            IngredientsLabel.AutoSize = true;
             IngredientsLabel.Font = new Font("Segoe UI", 12F);
             IngredientsLabel.Location = new Point(297, 160);
+            IngredientsLabel.MaximumSize = new Size(369, 54);
             IngredientsLabel.Name = "IngredientsLabel";
-            IngredientsLabel.Size = new Size(114, 28);
+            IngredientsLabel.Size = new Size(369, 53);
             IngredientsLabel.TabIndex = 8;
             IngredientsLabel.Text = "Ingredients:";
             // 

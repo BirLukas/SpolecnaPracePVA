@@ -16,8 +16,6 @@ namespace SpolecnaPracePVACode
         private APIHandler _APIHandler = new APIHandler();
         private JSONDataHandler _jsonhandler = new JSONDataHandler();
 
-        // TODO Zalamování textu instrukcí
-
         private void UpdateInfo(Cocktail cocktail) // naète náhodný koktejl a aktualizuje informace
         {
             
